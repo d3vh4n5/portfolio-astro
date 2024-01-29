@@ -1,12 +1,22 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "E:/repositorios/portfolio-astro",
     "paths": {
-      "@/*" : ["src/*"],
-      "@/components":["src/components/*"],
-      "@/icons":["src/icons/*"],
-      "@/data":["src/data/*"],
-    }
+      "@/*": [
+        "src/*"
+      ],
+      "@/components": [
+        "src/components/*"
+      ],
+      "@/icons": [
+        "src/icons/*"
+      ],
+      "@/data": [
+        "src/data/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
   }
 }
