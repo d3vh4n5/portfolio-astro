@@ -1,0 +1,20 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/Header.astro';
+
+import { geti18n } from '@/i18n/'
+
+const {currentLocale} = Astro
+const i18n = geti18n(currentLocale)
+---
+
+<Layout title="Welcome to Astro.">
+	<Header />
+	ponele que acá está la app 
+    <br>
+    {i18n.test.title}
+</Layout>
+
+<style>
+
+</style>
