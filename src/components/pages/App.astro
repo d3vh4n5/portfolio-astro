@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/Header.astro';
+import Hero from '@/components/sections/home/Hero.astro'
 
 import { geti18n } from '@/i18n/'
 
@@ -10,13 +11,7 @@ const i18n = geti18n(currentLocale)
 
 <Layout title={i18n.seo.title} description={i18n.seo.description}>
 	<Header />
-	ponele que acá está la app 
-    <br>
-    {i18n.menu.home}
-    <div class="border h-40 w-40 rounded-xl mx-auto bg-red-800 dark:bg-green-600">
-        COntenido loco
-    </div>
-    <button id="boton">alerta</button>
+	<Hero />
 </Layout>
 
 <style>

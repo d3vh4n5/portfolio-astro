@@ -21,6 +21,10 @@ const LOCALES = {
   },
 };
 
+const otherLocales = Object.values(LOCALES).filter(
+  (locale) => locale.code !== currentLocale,
+);
+
 ---
 <button class="group hover:bg-slate-300 dark:hover:bg-slate-700 relative border border-current w-[150px] flex items-center justify-between px-1">
     {
@@ -32,21 +36,28 @@ const LOCALES = {
     {LANGUAGES[currentLocale].language}
     <span>▼</span>
     <ul class="group-hover:block absolute hidden top-6 left-[-1px] border border-current w-[150px] bg-[#e7e7e7] dark:bg-[#212433]">
-        <li class="hover:bg-slate-300 dark:hover:bg-slate-700 flex px-1 justify-between">
-            
-            {
-                currentLocale !== 'es'
-                    ? (
-                        <ArgentinaFlag  class="w-5"/>
-                        <a href="/">Español</a>
-                        <span>◄</span>
-                    )
-                    : (
-                        <UniteStatesFlag  class="w-5"/>
-                        <a href="/en">English</a>
-                        <span>◄</span>
-                    )
-            }
-        </li>
+        
+        <!-- {
+            currentLocale !== 'es'
+            ? (
+            <ArgentinaFlag  class="w-5"/>
+            <a href="/">Español</a>
+            <span>◄</span>
+            )
+            : (
+            <UniteStatesFlag  class="w-5"/>
+            <a href="/en">English</a>
+            <span>◄</span>
+            )
+        } -->
+        {
+            otherLocales.map(item=>(
+                <li class="hover:bg-slate-300 dark:hover:bg-slate-700 flex px-1 justify-between">
+                    <item.flag class="w-5"/>
+                    <a href="/en">English</a>
+                    <span>◄</span>
+                </li>
+            ))
+        }
     </ul>
 </button>

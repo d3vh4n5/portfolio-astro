@@ -1,9 +1,6 @@
 
 
 const HERO_EN = {
-    ui:{
-        cv: "Resume"
-    },
     from: {
         country: "Argentina",
         province: "Buenos Aires",
@@ -16,9 +13,6 @@ const HERO_EN = {
     
 }
 const HERO_ES = {
-    ui:{
-        cv: "Ver Currículum"
-    },
     from: {
         country: "Argentina",
         province: "Buenos Aires",

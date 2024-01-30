@@ -1,0 +1,44 @@
+---
+import Section from '@/components/Section.astro'
+import { geti18n } from '@/i18n/'
+
+
+const {currentLocale} = Astro
+const i18n = geti18n(currentLocale)
+---
+
+<Section>
+    <div v-if="profile" class="hero__container">
+        <img 
+            class="hero__image"
+            src="/me.png" 
+            alt="Juan Basgall photo"
+        >
+        <div class="hero__texts">
+            <h1 class="hero__h1">{ i18n.name }</h1>
+            <h2 class="hero__h2">{ i18n.role }</h2>
+            <span class="hero__status">
+                { i18n.status }
+            </span>
+            <div class="social-container">
+                <a href="" class="social__button ">
+                    <font-awesome-icon :icon="['fab', 'linkedin']" class="social__icon--linkedin"/>
+                    LinkedIn
+                </a>
+                <a href="" class="social__button">
+                    <font-awesome-icon :icon="['fab', 'square-github']" class="social__icon--github" />
+                    Github
+                </a>
+                <a 
+                    class="social__button"
+                    href="https://firebasestorage.googleapis.com/v0/b/portfolio-c7261.appspot.com/o/files%2FCV_Juan_Basgall_Programador.pdf?alt=media&token=4e931bee-ba52-472e-a342-1ec13060491d"
+                    target="_blank"
+                >
+                    <font-awesome-icon :icon="['fas', 'file-pdf']" class="social__icon--pdf" />
+                    { i18n.ui.resume }
+                </a>
+
+            </div>
+        </div>
+    </div>
+</Section>

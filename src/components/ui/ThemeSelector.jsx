@@ -29,9 +29,10 @@ export default function ThemeSelector(){
         <>
             <button 
                 onClick={handleThemeChange}
-                class=""
+                class="hover:scale-110"
             >
-                <span dangerouslySetInnerHTML={{ __html: theme === 'light' ? SunIcon : MoonIcon }} />
+                <span 
+                    dangerouslySetInnerHTML={{ __html: theme === 'light' ? SunIcon : MoonIcon }} />
             </button>
         </>
     )
