@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/Layout.astro"
+---
+<Layout title="404 Not Found">
+    <section class="h-screen bg-slate-900 flex flex-col justify-center items-center">
+        
+        <div class="border mx-[20px] border-slate-700 rounded-2xl overflow-hidden shadow-[0_7px_15px_5px_rgba(0,150,100,.2)]">
+            <div>
+                <div class="flex gap-2 ps-2 pt-2">
+                    <div class="rounded-full bg-red-500 h-4 w-4"></div>
+                    <div class="rounded-full bg-yellow-500 h-4 w-4"></div>
+                    <div class="rounded-full bg-green-500 h-4 w-4"></div>
+                </div>
+                <h1 class="my-2 text-center font-medium text-3xl text-cyan-300">
+                    Page not found =(
+                </h1>
+            </div>
+            <img src="/404.webp" alt="">
+        </div>
+
+        <a href="/" class="bg-cyan-400 text-black font-medium py-2 px-4 rounded-md mt-8 hover:bg-cyan-300">Back Home</a>
+    </section>
+</Layout>

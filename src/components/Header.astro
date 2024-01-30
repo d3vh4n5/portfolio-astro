@@ -1,8 +1,12 @@
 ---
 import ThemeSelector from '@/components/ui/ThemeSelector.jsx'
+import { geti18n } from '@/i18n/'
+
+const {currentLocale} = Astro
+const i18n = geti18n(currentLocale)
 ---
 
-<header>
+<header class="w-full bg-slate-900">
     <div>
         <ThemeSelector client:only />
     </div>

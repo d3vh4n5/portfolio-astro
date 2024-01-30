@@ -1,6 +1,37 @@
 {
-    "test": {
-        "title": "The Title",
-        "description": "Crazy description"
+  "seo": {
+    "title": "Porfolio de Juan Basgall - Técnico Superior en Programación",
+    "description": "Porfolio de Juan Basgall - Técnico Superior en Programación - HTML, CSS, JavaScript, React, Vue, Django, PHP"
+  },
+  "ui": {
+    "send" : "Send",
+    "logIn" : "Log in",
+    "logOut": "Log Out",
+    "name": "Name",
+    "email": "e-mail",
+    "pass": "Password",
+    "subject" : "Subject",
+    "description": "Description",
+    "visit": "Visit",
+    "download" : "Download",
+    "viewCode" : "View code",
+    "resume" : "Resume",
+    "modalMsgSuccess" : {
+      "title" : "Sent",
+      "description": "Message sent successfully"
+    },
+    "modalMsgError" : {
+      "title" : "Error",
+      "description" : "An error occurred while sending the message, please try again later or try another method of communication."
     }
+  },
+  "menu": {
+    "home": "Home",
+    "experience": "Experience",
+    "projects": "Projects",
+    "career": "Career",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "copyright": "©️ Developed by Juan Angel Basgall"
 }
