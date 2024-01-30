@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'preact/hooks'
+import MoonIcon from "../icons/MoonIcon.astro?raw";
+import SunIcon from "../icons/SunIcon.astro?raw";
 
 export default function ThemeSelector(){
 
@@ -27,9 +29,9 @@ export default function ThemeSelector(){
         <>
             <button 
                 onClick={handleThemeChange}
-                class="border"
+                class=""
             >
-                Darkmode
+                <span dangerouslySetInnerHTML={{ __html: theme === 'light' ? SunIcon : MoonIcon }} />
             </button>
         </>
     )
