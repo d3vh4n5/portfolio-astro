@@ -1,5 +1,6 @@
 ---
 import ThemeSelector from '@/components/ui/ThemeSelector.jsx'
+import LanguageSelector from './ui/LanguageSelector.astro'
 import { geti18n } from '@/i18n/'
 
 const {currentLocale} = Astro
@@ -9,8 +10,9 @@ const menuKeys = Object.keys(i18n.menu)
 ---
 
 <header class="w-[1000px] mx-auto rounded-b-xl  backdrop-blur-sm shadow">
-    <div>
+    <div class="flex justify-center gap-5">
         <ThemeSelector client:only />
+        <LanguageSelector />
     </div>
 
     <nav>

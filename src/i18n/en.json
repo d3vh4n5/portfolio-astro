@@ -1,7 +1,8 @@
 {
+  "language": "English",
   "seo": {
-    "title": "Porfolio de Juan Basgall - Técnico Superior en Programación",
-    "description": "Porfolio de Juan Basgall - Técnico Superior en Programación - HTML, CSS, JavaScript, React, Vue, Django, PHP"
+    "title": "Juan Basgall's Portfolio - Higher Technician in Programming",
+    "description": "Juan Basgall's Portfolio - Higher Technician in Programming - HTML, CSS, JavaScript, React, Vue, Django, PHP"
   },
   "ui": {
     "send" : "Send",

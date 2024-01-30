@@ -8,7 +8,7 @@ const {currentLocale} = Astro
 const i18n = geti18n(currentLocale)
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title={i18n.seo.title} description={i18n.seo.description}>
 	<Header />
 	ponele que acá está la app 
     <br>

@@ -1,0 +1,52 @@
+---
+import { LANGUAGES, geti18n } from "@/i18n";
+import UniteStatesFlag from "../icons/flags/UniteStatesFlag.astro";
+import ArgentinaFlag from '@/components/icons/flags/ArgentinaFlag.astro'
+
+const {currentLocale, url} = Astro
+const i18n = geti18n(currentLocale)
+
+const LOCALES = {
+  en: {
+    code: "en",
+    href: `/en`,
+    name: "English",
+    flag: UniteStatesFlag,
+  },
+  es: {
+    code: "es",
+    href: "",
+    name: "Español",
+    flag: ArgentinaFlag,
+  },
+};
+
+---
+<button class="group hover:bg-slate-300 dark:hover:bg-slate-700 relative border border-current w-[150px] flex items-center justify-between px-1">
+    {
+        currentLocale === 'es'
+            ? <ArgentinaFlag  class="w-5"/>
+            : <UniteStatesFlag  class="w-5"/>
+    }
+    
+    {LANGUAGES[currentLocale].language}
+    <span>▼</span>
+    <ul class="group-hover:block absolute hidden top-6 left-[-1px] border border-current w-[150px] bg-[#e7e7e7] dark:bg-[#212433]">
+        <li class="hover:bg-slate-300 dark:hover:bg-slate-700 flex px-1 justify-between">
+            
+            {
+                currentLocale !== 'es'
+                    ? (
+                        <ArgentinaFlag  class="w-5"/>
+                        <a href="/">Español</a>
+                        <span>◄</span>
+                    )
+                    : (
+                        <UniteStatesFlag  class="w-5"/>
+                        <a href="/en">English</a>
+                        <span>◄</span>
+                    )
+            }
+        </li>
+    </ul>
+</button>
