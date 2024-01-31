@@ -3,6 +3,7 @@ import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/Header.astro';
 import Hero from '@/components/sections/home/Home.astro'
 import Experience from '../sections/experiences/Experience.astro';
+import MainProjects from '../sections/projects/MainProjects.astro';
 
 import { geti18n } from '@/i18n/'
 
@@ -14,6 +15,7 @@ const i18n = geti18n(currentLocale)
 	<Header />
 	<Hero />
 	<Experience />
+	<MainProjects />
 </Layout>
 
 <style>

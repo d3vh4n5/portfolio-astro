@@ -1,0 +1,61 @@
+---
+import Code from "@/components/icons/Code.astro"
+import LinkIcon from "@/components/icons/LinkIcon.astro"
+import { geti18n } from "@/i18n"
+
+
+const { project } = Astro.props
+
+const { currentLocale } = Astro
+const i18n = geti18n(currentLocale)
+
+---
+<div class="flex project-card my-7 rounded-xl overflow-hidden shadow-md dark:shadow-emerald-300/20 dark:shadow-lg">
+    <img src={project.imageURL} alt="Project image" class="w-1/2 aspect-video">
+    <div class="p-4 relative project-card__texts">
+        <h3 class="text-3xl font-medium mb-3">{ project && project.title  }</h3>
+        <p class="mb-2">
+            { project && project.description  }
+        </p>
+        <ul class="flex gap-2">
+            {
+                project.technologies.map(Icon=>(
+                    <li class="" v-for="tech in project.technologies">
+                        <Icon class="size-7"/>
+                    </li>
+                ))
+            }
+             
+                
+        </ul>
+        <div class="flex absolute bottom-4 gap-4 right-4 project-card__buttons-container">
+            <a class="flex w-fit py-1 px-3 rounded font-medium bg-blue-600/30" target="_blank" rel="noreferrer" href={project.code_link}>
+                <Code class="size-6 me-2"/>
+                { i18n.ui.viewCode }
+            </a>
+            <a class="flex w-fit py-1 px-3 rounded font-medium dark:bg-emerald-400 dark:text-black bg-orange-400" target="_blank" rel="noreferrer" href={project.visit_link}>
+                <LinkIcon class="size-6 me-2"/>
+                { i18n.ui.visit }
+            </a>
+        </div>
+    </div>
+</div>
+
+<style> 
+    .project-card{
+
+        &:nth-of-type(2n){
+            flex-direction: row-reverse;
+            
+            .project-card__buttons-container{
+                left: 16px;
+            }
+        } 
+    }
+    
+    
+    .project-card__texts{
+        background: radial-gradient(ellipse 100% 90% at 40% 0%, #bf398910 0, transparent 75%), radial-gradient(ellipse at 60% 0%, #096bde10 0, transparent 75%);
+    }
+    
+</style>

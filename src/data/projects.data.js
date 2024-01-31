@@ -1,5 +1,5 @@
 
-//import { TAGS } from "../constants/tags.constants.astro";
+import { TAGS } from "@/components/icons/tags/tags.js"
 
 export const PROJECTS_ES = [
           {
@@ -10,12 +10,12 @@ export const PROJECTS_ES = [
             "imageURL": "https://firebasestorage.googleapis.com/v0/b/portfolio-c7261.appspot.com/o/img%2Fd45960c2f4755c474abe06e0c731ba641ff72940266a4148f71f86b38692d9b7?alt=media&token=f66474af-9e04-49d8-a518-e74df997592e",
             "title": "Mercado Lan",
             "visit_link": "https://mercadolan.000webhostapp.com/",
-            "technologies": [
-              "php",
-              "js",
-              "html5",
-              "css3-alt",
-              "database"
+            technologies: [
+              TAGS.php,
+              TAGS.js,
+              TAGS.html,
+              TAGS.css,
+              TAGS.database
             ],
             "id": "LyGKL96mpYh2gulQcxtt"
           },
@@ -28,10 +28,10 @@ export const PROJECTS_ES = [
             "imageURL": "https://firebasestorage.googleapis.com/v0/b/portfolio-c7261.appspot.com/o/img%2F8ed5e9c20453fde4716c5fa4311077a948e2471eb86f6177fc2bd20c7bddef55?alt=media&token=44581f06-8d3a-480b-b851-d3b6171358b8",
             "description": "Front-end hecho en React durante la materia de \"Interfaz de desarrollo\" de Teclab.",
             "technologies": [
-              "js",
-              "react",
-              "html5",
-              "css3-alt"
+              TAGS.react,
+              TAGS.html,
+              TAGS.js,
+              TAGS.css
             ],
             "id": "lWdwufSDnWmyHvQo0JS7"
           },
@@ -39,8 +39,8 @@ export const PROJECTS_ES = [
             "visit_link": "https://github.com/d3vh4n5/CRUDCaCPython",
             "imageURL": "https://firebasestorage.googleapis.com/v0/b/portfolio-c7261.appspot.com/o/img%2Fecd09df9328bc48d72ae5e5be0ebb7ddee90a8ab466ef92d9e90678061785759?alt=media&token=9e735fec-259b-4e81-b01d-cd1f7ee90eb3",
             "technologies": [
-              "python",
-              "database"
+              TAGS.python,
+              TAGS.database
             ],
             "code_link": "https://github.com/d3vh4n5/CRUDCaCPython",
             "title": "Tkinter CRUD",
@@ -56,9 +56,9 @@ export const PROJECTS_ES = [
             "description": "Proyecto de back-end que realizamos de forma grupal para la materia \"Integraciones Web\" de Teclab. Para el mismo usamos Node.js y Express.js",
             "visible": true,
             "technologies": [
-              "node",
-              "github",
-              "database"
+              TAGS.node,
+              TAGS.js,
+              TAGS.database,
             ],
             "title": "API REST",
             "code_link": "https://github.com/d3vh4n5/APIGrupalTeclab",
