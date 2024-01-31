@@ -1,7 +1,8 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/Header.astro';
-import Hero from '@/components/sections/home/Hero.astro'
+import Hero from '@/components/sections/home/Home.astro'
+import Experience from '../sections/experiences/Experience.astro';
 
 import { geti18n } from '@/i18n/'
 
@@ -12,6 +13,7 @@ const i18n = geti18n(currentLocale)
 <Layout title={i18n.seo.title} description={i18n.seo.description}>
 	<Header />
 	<Hero />
+	<Experience />
 </Layout>
 
 <style>

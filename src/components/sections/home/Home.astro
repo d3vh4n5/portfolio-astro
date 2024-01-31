@@ -1,0 +1,46 @@
+---
+import Section from '@/components/Section.astro'
+import SocialPill from './SocialPill.astro'
+import GitHub from '@/components/icons/GitHub.astro'
+import LinkedIn from '@/components/icons/LinkedIn.astro'
+import PDFIcon from '@/components/icons/PDF.astro'
+import { geti18n } from '@/i18n/'
+import { HERO } from '@/data/hero.data'
+
+
+const {currentLocale} = Astro
+const i18n = geti18n(currentLocale)
+const HERO_CONTENT = HERO[currentLocale]
+---
+
+<Section id="home">
+    <div class="md:flex gap-20" >
+        <img 
+            class="rounded-full bg-[#4169e14d] w-[200px] h-[200px] border-4 border-white dark:border-[#101218]"
+            src="/me.png" 
+            alt="Juan Basgall photo"
+        >
+        <div class="flex flex-col justify-center">
+            <h1 class="text-4xl font-bold">{ HERO_CONTENT.name }</h1>
+            <h2 class="text-2xl mt-2 font-semibold dark:text-emerald-400 text-orange-400">{ HERO_CONTENT.role }</h2>
+            <span class="border border-current rounded w-fit px-5 my-4 text-green-700 dark:text-green-500 bg-green-400/20">
+                { HERO_CONTENT.status }
+            </span>
+            <div class="flex gap-2">
+                <SocialPill href="https://www.linkedin.com/in/juanangelbasgall/">
+                    <LinkedIn class="size-4 md:size-6" />
+                    LinkedIn
+                </SocialPill>
+                <SocialPill href="https://github.com/d3vh4n5">
+                    <GitHub class="size-4 md:size-6" />
+                    Github
+                </SocialPill>
+                <SocialPill href="https://firebasestorage.googleapis.com/v0/b/portfolio-c7261.appspot.com/o/files%2FCV_Juan_Basgall_Programador.pdf?alt=media&token=4e931bee-ba52-472e-a342-1ec13060491d">
+                    <PDFIcon class="size-4 md:size-6" />
+                    { i18n.ui.resume }
+                </SocialPill>
+
+            </div>
+        </div>
+    </div>
+</Section>

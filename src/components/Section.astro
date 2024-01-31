@@ -1,8 +1,10 @@
 ---
-const { title } = Astro.props
+const { id } = Astro.props
 ---
-<section class="px-2 w-full sm:w-[600px] lg:w-[900px] mx-auto">
-    { title && <h2>{title}</h2>}
-    <!-- Usar divider para dividir? o margin? -->
+<section 
+    class="px-2 w-full sm:w-[600px] lg:w-[900px] mx-auto my-20" 
+    id={id}
+    data-section={id}
+>
     <slot />
 </section>
