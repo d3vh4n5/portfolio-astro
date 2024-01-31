@@ -1,24 +1,26 @@
 ---
 import Section from '@/components/Section.astro'
 import { geti18n } from '@/i18n/'
+import { HERO } from '@/data/hero.data'
 
 
 const {currentLocale} = Astro
 const i18n = geti18n(currentLocale)
+const HERO_CONTENT = HERO[currentLocale]
 ---
 
 <Section>
-    <div v-if="profile" class="hero__container">
+    <div v-if="profile" class="flex bg-red-200/20">
         <img 
-            class="hero__image"
+            class="rounded-full bg-[#4169e14d] w-40 border-4 border-white dark:border-[#101218]"
             src="/me.png" 
             alt="Juan Basgall photo"
         >
-        <div class="hero__texts">
-            <h1 class="hero__h1">{ i18n.name }</h1>
-            <h2 class="hero__h2">{ i18n.role }</h2>
+        <div class="flex flex-col justify-center">
+            <h1 class="hero__h1">{ HERO_CONTENT.name }</h1>
+            <h2 class="hero__h2">{ HERO_CONTENT.role }</h2>
             <span class="hero__status">
-                { i18n.status }
+                { HERO_CONTENT.status }
             </span>
             <div class="social-container">
                 <a href="" class="social__button ">

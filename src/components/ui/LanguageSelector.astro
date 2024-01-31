@@ -15,7 +15,7 @@ const LOCALES = {
   },
   es: {
     code: "es",
-    href: "",
+    href: "/",
     name: "Español",
     flag: ArgentinaFlag,
   },
@@ -54,7 +54,7 @@ const otherLocales = Object.values(LOCALES).filter(
             otherLocales.map(item=>(
                 <li class="hover:bg-slate-300 dark:hover:bg-slate-700 flex px-1 justify-between">
                     <item.flag class="w-5"/>
-                    <a href="/en">English</a>
+                    <a href={item.href}>{item.name}</a>
                     <span>◄</span>
                 </li>
             ))
