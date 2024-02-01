@@ -1,5 +1,9 @@
 ---
 import Section from "@/components/Section.astro";
+import AstroIcon from "@/components/icons/tags/AstroIcon.astro";
+import Tailwind from "@/components/icons/Tailwind.astro";
+import ReactIcon from "@/components/icons/tags/ReactIcon.astro";
+import Vue from "@/components/icons/tags/Vue.astro";
 import { geti18n } from "@/i18n";
 
 const { currentLocale } = Astro
@@ -8,8 +12,28 @@ const i18n = geti18n(currentLocale)
 ---
 
 <Section>
-    <p>
-        {i18n.copyright}
-    </p>
+    <div class=" bg-white dark:bg-[#101218]/80 p-5">
 
+        <aside class="flex mx-auto w-fit">
+            {i18n.copyright}
+            <span class="flex gap-2">
+                
+                <AstroIcon class="size-6 md:size-8"/>
+                <Tailwind class="size-6 md:size-8"/>
+                <ReactIcon class="size-6 md:size-8"/>
+                <Vue class="size-6 md:size-8 text-emerald-500"/>
+            </span>
+        </aside>
+        <ul>
+            <li>
+                <a href="">LINK</a>
+            </li>
+            <li>
+                <a href="">LINK</a>
+            </li>
+            <li>
+                <a href="">LINK</a>
+            </li>
+        </ul>
+    </div>
 </Section>

@@ -1,10 +1,19 @@
 ---
-const { id } = Astro.props
+const { class: className, id, title } = Astro.props
 ---
 <section 
-    class="px-2 w-full sm:w-[600px] lg:w-[900px] mx-auto my-20" 
+    class=`px-2 w-full sm:w-[600px] lg:w-[900px] mx-auto my-20 ${className}`
     id={id}
     data-section={id}
 >
+    {
+        title && (
+        <h2 class="flex gap-3 text-4xl items-center font-medium mb-20">
+            <slot name="icon" />
+            {title}
+        </h2>
+        )
+    }
+
     <slot />
 </section>

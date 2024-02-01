@@ -11,12 +11,10 @@ const i18n = geti18n(currentLocale)
 const educationContent = CAREER[currentLocale]
 ---
 
-<Section id="career">
-    <h2 class="flex gap-3 text-4xl items-center font-medium">
-        <Graduate class="size-6 md:size-8"/>
-        {i18n.menu.career}
-    </h2>
-    <ul class="border-l">
+<Section id="career" title={i18n.menu.career}>
+    
+    <Graduate class="size-6 md:size-8" slot="icon"/>
+    <ul class="border-l border-current">
         {
             educationContent.map(education=>(
                 <EducationItem education={education} />

@@ -10,11 +10,8 @@ const i18n = geti18n(currentLocale)
 const projectsContent = PROJECTS[currentLocale]
 ---
 
-<Section id="projects">
-    <h2 class="flex text-4xl gap-3 font-medium items-center">
-        <CodeIcon class="size-6 md:size-8"/>
-        {i18n.menu.projects}
-    </h2>
+<Section id="projects" title={i18n.menu.projects}>
+    <CodeIcon class="size-6 md:size-8" slot="icon"/>
     <div>
         {
             projectsContent.map(project=>(

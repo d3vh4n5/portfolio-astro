@@ -16,11 +16,9 @@ const i18n = geti18n(currentLocale)
 const experienceContent = EXPERIENCES[currentLocale]
 ---
 
-<Section id="experience">
-    <h2 class="flex text-4xl gap-3 font-medium items-center">
-        <Briefcase class="size-6 md:size-8"/>
-        {i18n.menu.experience}
-    </h2>
+<Section id="experience" title={i18n.menu.experience}>
+    <Briefcase class="size-6 md:size-8" slot="icon"/>
+        
     <article>
         <div class="sm:flex mt-[80px] gap-10">
             <div class="min-w-[70px] h-[70px] flex items-center justify-center bg-[#00494e] rounded-full">
