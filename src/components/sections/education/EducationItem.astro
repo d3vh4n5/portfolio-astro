@@ -1,0 +1,16 @@
+---
+const { education } = Astro.props
+---
+
+<li class="relative ps-10 mb-10">
+    <div class="absolute w-4 h-4 bg-orange-500 dark:bg-emerald-400 rounded-full left-[-8px] top-1">
+        <!-- <img src="" alt="Logo"> -->
+    </div>
+    <div class="">
+        <h4 class="text-xl font-bold mb-1">{ education.title }</h4>
+        <h5 class="text-gray-400/90 mb-2">{ education.dates }</h5>
+        <p class="education__description">
+            - { education.description }
+        </p>
+    </div>
+</li>

@@ -4,6 +4,7 @@ import SocialPill from './SocialPill.astro'
 import GitHub from '@/components/icons/GitHub.astro'
 import LinkedIn from '@/components/icons/LinkedIn.astro'
 import PDFIcon from '@/components/icons/PDF.astro'
+import MapLocationDot from '@/components/icons/MapLocationDot.astro'
 import { geti18n } from '@/i18n/'
 import { HERO } from '@/data/hero.data'
 
@@ -23,6 +24,10 @@ const HERO_CONTENT = HERO[currentLocale]
         <div class="flex flex-col justify-center">
             <h1 class="text-4xl font-bold">{ HERO_CONTENT.name }</h1>
             <h2 class="text-2xl mt-2 font-semibold dark:text-emerald-400 text-orange-400">{ HERO_CONTENT.role }</h2>
+            <div class="flex gap-2 text-gray-400">
+                <MapLocationDot class="size-6"/>
+                {HERO_CONTENT.from.city} - {HERO_CONTENT.from.province} - {HERO_CONTENT.from.country}
+            </div>
             <span class="border border-current rounded w-fit px-5 my-4 text-green-700 dark:text-green-500 bg-green-400/20">
                 { HERO_CONTENT.status }
             </span>
