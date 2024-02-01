@@ -5,6 +5,7 @@ import Tailwind from "@/components/icons/Tailwind.astro";
 import ReactIcon from "@/components/icons/tags/ReactIcon.astro";
 import Vue from "@/components/icons/tags/Vue.astro";
 import Fire from "@/components/icons/tags/Fire.astro";
+import Code from "@/components/icons/Code.astro";
 import { geti18n } from "@/i18n";
 
 const { currentLocale } = Astro
@@ -31,7 +32,16 @@ const menuKeys = Object.keys(i18n.menu)
             </ul>
         </nav>
         <aside class="md:flex w-fit items-center mx-auto md:mx-0">
-            {i18n.copyright}
+            <p>
+                {i18n.copyright}
+            </p>
+            <a 
+                href="https://github.com/d3vh4n5/portfolio-astro"
+                class="flex gap-1 border-b border-current sm:ms-1 text-blue-500 w-fit mx-auto"
+                >
+                <Code />
+                code
+            </a>
         </aside>
         <div class="md:block flex justify-center gap-4 mt-3 md:mt-0">
                 <AstroIcon class="size-6 md:size-8 bg-[#101218]/80 rounded py-1"/>

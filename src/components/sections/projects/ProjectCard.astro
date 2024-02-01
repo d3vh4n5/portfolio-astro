@@ -13,7 +13,7 @@ const i18n = geti18n(currentLocale)
 <div class="lg:flex project-card bg-white dark:bg-[#101218]/70 my-7 rounded-xl overflow-hidden shadow-md  dark:shadow-lg">
     <img src={project.imageURL} alt="Project image" class="lg:w-1/2 aspect-video">
     <div class="p-4 relative project-card__texts">
-        <h3 class="text-3xl font-medium mb-3">{ project && project.title  }</h3>
+        <h3 class="text-xl sm:text-3xl font-medium mb-3">{ project && project.title  }</h3>
         <p class="mb-2">
             { project && project.description  }
         </p>
@@ -27,11 +27,11 @@ const i18n = geti18n(currentLocale)
             }
         </ul>
         <div class="flex absolute bottom-4 gap-4 right-4 project-card__buttons-container">
-            <a class="flex w-fit py-1 px-3 rounded font-medium bg-blue-600/30 hover:bg-blue-500/30" target="_blank" rel="noreferrer" href={project.code_link}>
+            <a class="flex w-fit items-center py-1 px-3 rounded font-medium bg-blue-600/30 hover:bg-blue-500/30" target="_blank" rel="noreferrer" href={project.code_link}>
                 <Code class="size-6 me-2"/>
                 { i18n.ui.viewCode }
             </a>
-            <a class="flex w-fit py-1 px-3 rounded font-medium dark:bg-emerald-400 hover:dark:bg-emerald-300 dark:text-black bg-orange-400 hover:bg-orange-300" target="_blank" rel="noreferrer" href={project.visit_link}>
+            <a class="flex w-fit items-center py-1 px-3 rounded font-medium dark:bg-emerald-400 hover:dark:bg-emerald-300 dark:text-black bg-orange-400 hover:bg-orange-300" target="_blank" rel="noreferrer" href={project.visit_link}>
                 <LinkIcon class="size-6 me-2"/>
                 { i18n.ui.visit }
             </a>

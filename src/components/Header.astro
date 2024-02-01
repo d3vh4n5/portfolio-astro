@@ -1,6 +1,7 @@
 ---
 import ThemeSelector from '@/components/ui/ThemeSelector.jsx'
 import LanguageSelector from './ui/LanguageSelector.astro'
+import MenuIcon from './icons/MenuIcon.astro'
 import { geti18n } from '@/i18n/'
 
 const {currentLocale} = Astro
@@ -10,12 +11,49 @@ const menuKeys = Object.keys(i18n.menu)
 ---
 
 <header class="fixed z-50 w-full lg:w-[1000px] left-1/2 translate-x-[-50%] rounded-b-xl  backdrop-blur-sm shadow pt-2">
-    <div class="flex justify-center gap-5">
+    <div class="absolute sm:static hidden sm:flex justify-center gap-5">
         <ThemeSelector client:only="preact" />
         <LanguageSelector />
     </div>
+    <!-- Mobile version -->
+    <button
+      id="menu-toggle"
+      type="button"
+      class="z-50 inline-flex sm:hidden hover:bg-gray-300
+       dark:hover:bg-gray-800 rounded transition hover:scale-110 p-1 
+       border-2 border-black/10 dark:border-white/10 m-3"
+      aria-label="Menu"
+    >
+      <MenuIcon class="size-6" />
+    </button>
+    <span class="float-right me-3 mt-4 sm:hidden">
+        <ThemeSelector client:only="preact" />
+    </span>
 
-    <nav>
+    <!-- Menú de navegación móvil para pantallas pequeñas -->
+    <nav
+      id="mobile-menu"
+      class="z-20 bg-gray-200/90 dark:bg-gray-900/90 -translate-y-full transition-transform sm:hidden w-full flex flex-col items-center text-center text-2xl fixed top-0 left-0 right-0 h-dvh place-content-center gap-2"
+    >
+    <ul class="">
+        <li>
+            <LanguageSelector />
+        </li>
+        {
+            menuKeys.map(key=>(
+                <li>
+                    <a 
+                        class="menu-item my-2 py-2 px-4 uppercase block rounded text-xl"
+                        href={'#'+key}
+                    >{i18n.menu[key]}</a>
+                </li>
+            ))
+        }
+    </ul>
+
+    </nav>
+    <!-- END Mobile version -->
+    <nav class="hidden sm:block">
         <ul class="flex justify-center gap-3">
             {
                 menuKeys.map(key=>(
@@ -30,3 +68,28 @@ const menuKeys = Object.keys(i18n.menu)
         </ul>
     </nav>
 </header>
+
+<script>
+    document.addEventListener("astro:page-load", () => {
+      const menuToggle = document.getElementById("menu-toggle") as HTMLElement;
+  
+      const mobileMenu = document.getElementById("mobile-menu") as HTMLElement;
+      const menuItems = document.querySelectorAll(".menu-item");
+  
+      if (!menuToggle || !mobileMenu || !menuItems) {
+        return;
+      }
+  
+      menuToggle.addEventListener("click", () => {
+        document.body.classList.toggle("overflow-hidden");
+        mobileMenu.classList.toggle("translate-y-0");
+      });
+  
+      menuItems.forEach((elem) => {
+        elem.addEventListener("click", function () {
+          document.body.classList.toggle("overflow-hidden");
+          mobileMenu.classList.toggle("translate-y-0");
+        });
+      });
+    });
+  </script>
