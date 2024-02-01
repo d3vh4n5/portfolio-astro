@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "E:/repositorios/portfolio-astro",
     "paths": {
       "@/*": [
         "src/*"
@@ -16,7 +16,7 @@
         "src/data/*"
       ]
     },
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "jsxImportSource": "preact"
   }
 }

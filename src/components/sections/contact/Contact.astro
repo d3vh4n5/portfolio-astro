@@ -1,6 +1,7 @@
 ---
 import Section from "@/components/Section.astro";
 import Envelope from '@/components/icons/Envelope.astro'
+import ContactForm from "./ContactForm.vue";
 import { geti18n } from "@/i18n";
 
 const { currentLocale } = Astro
@@ -8,10 +9,8 @@ const { currentLocale } = Astro
 const i18n = geti18n(currentLocale)
 ---
 
-<Section id="contact">
-    <h2 class="flex gap-3 text-4xl items-center font-medium">
-        <Envelope class="size-6 md:size-8"/>
-        {i18n.menu.contact}
-    </h2>
+<Section id="contact" title={i18n.menu.contact}>
+    <Envelope class="size-6 md:size-8" slot="icon"/>
 
+    <ContactForm client:only="vue" />
 </Section>
