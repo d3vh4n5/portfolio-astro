@@ -7,6 +7,7 @@ import PDFIcon from '@/components/icons/PDF.astro'
 import MapLocationDot from '@/components/icons/MapLocationDot.astro'
 import { geti18n } from '@/i18n/'
 import { HERO } from '@/data/hero.data'
+import { userLinks } from '@/constants/userLinks.constants'
 
 
 const {currentLocale} = Astro
@@ -32,15 +33,15 @@ const HERO_CONTENT = HERO[currentLocale]
                 { HERO_CONTENT.status }
             </span>
             <div class="flex gap-2">
-                <SocialPill href="https://www.linkedin.com/in/juanangelbasgall/">
+                <SocialPill href={userLinks.linkedin}>
                     <LinkedIn class="size-4 md:size-5" />
                     LinkedIn
                 </SocialPill>
-                <SocialPill href="https://github.com/d3vh4n5">
+                <SocialPill href={userLinks.github}>
                     <GitHub class="size-4 md:size-5" />
                     Github
                 </SocialPill>
-                <SocialPill href="https://firebasestorage.googleapis.com/v0/b/portfolio-c7261.appspot.com/o/files%2FCV_Juan_Basgall_Programador.pdf?alt=media&token=4e931bee-ba52-472e-a342-1ec13060491d">
+                <SocialPill href={userLinks.resume}>
                     <PDFIcon class="size-4 md:size-5" />
                     { i18n.ui.resume }
                 </SocialPill>

@@ -6,7 +6,11 @@ import ReactIcon from "@/components/icons/tags/ReactIcon.astro";
 import Vue from "@/components/icons/tags/Vue.astro";
 import Fire from "@/components/icons/tags/Fire.astro";
 import Code from "@/components/icons/Code.astro";
+import LinkedIn from "@/components/icons/LinkedIn.astro";
+import GitHub from "@/components/icons/GitHub.astro";
+import PDF from "@/components/icons/PDF.astro";
 import { geti18n } from "@/i18n";
+import { userLinks } from "../../../constants/userLinks.constants.js"
 
 const { currentLocale } = Astro
 
@@ -31,13 +35,25 @@ const menuKeys = Object.keys(i18n.menu)
                 }
             </ul>
         </nav>
-        <aside class="md:flex w-fit items-center mx-auto md:mx-0">
-            <p>
+        <aside class="md:flex flex-col justify-center gap-4 w-fit items-center mx-auto md:mx-0">
+            <ul class="flex gap-3 justify-center md:mb-0 mb-4">
+                <li>
+                    <a href={userLinks.linkedin} target="_blank" rel="noopener noreferrer"><LinkedIn class="size-6 md:size-8" /></a>
+                </li>
+                <li>
+                    <a href={userLinks.github} target="_blank" rel="noopener noreferrer"><GitHub class="size-6 md:size-8" /></a>
+                </li>
+                <li>
+                    <a href={userLinks.resume} target="_blank" rel="noopener noreferrer"><PDF class="size-6 md:size-8" /></a>
+                </li>
+            </ul>
+            <p class="md:mb-0 mb-4">
                 {i18n.copyright}
             </p>
             <a 
                 href="https://github.com/d3vh4n5/portfolio-astro"
-                class="flex gap-1 border-b border-current sm:ms-1 text-blue-500 w-fit mx-auto"
+                class="flex gap-1 border-b border-current text-blue-500 
+                w-fit mx-auto items-center bg-blue-400/30 rounded pt-1 px-2 shadow-md"
                 >
                 <Code />
                 code
