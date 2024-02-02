@@ -18,14 +18,14 @@ export const visitHandler = ()=>{
     fetch('https://api.ipify.org?format=json')
         .then(response => response.json())
         .then(data => {
-            if (data.ip !== import.meta.env.PUBLIC_AVOID || window.location.hostname == 'localhost'){
-                try{
-                    createVisit()
-                } catch (e) {
-                    console.warn('Visit not counted')
-                }
-            } else {
-                console.info("Visit avoided")
+
+            if (data.ip !== import.meta.env.PUBLIC_AVOID) return console.log('Visit avoided')
+            if (window.location.hostname == 'localhost') return console.log('Visit avoided')
+            
+            try{
+                createVisit()
+            } catch (e) {
+                console.warn('Visit not counted')
             }
         })
         .catch(error => {
