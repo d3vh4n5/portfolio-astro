@@ -19,7 +19,7 @@ export const visitHandler = ()=>{
         .then(response => response.json())
         .then(data => {
 
-            if (data.ip !== import.meta.env.PUBLIC_AVOID) return console.log('Visit avoided')
+            if (data.ip == import.meta.env.PUBLIC_AVOID) return console.log('Visit avoided')
             if (window.location.hostname == 'localhost') return console.log('Visit avoided')
             
             try{
