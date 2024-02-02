@@ -48,7 +48,7 @@ const menuKeys = Object.keys(i18n.menu)
                 </li>
             </ul>
             <p class="md:mb-0 mb-4">
-                {i18n.copyright}
+                {i18n.footer.copyright}
             </p>
             <a 
                 href="https://github.com/d3vh4n5/portfolio-astro"
@@ -58,15 +58,18 @@ const menuKeys = Object.keys(i18n.menu)
                 target="_blank" rel="noopener noreferrer"
                 >
                 <Code />
-                code
+                {i18n.footer.code}
             </a>
         </aside>
-        <div class="md:block flex justify-center gap-4 mt-3 md:mt-0">
+        <div class="flex flex-wrap md:flex-col justify-center items-center gap-4 mt-3 md:mt-0">
+            <p class="md:mb-3">{i18n.footer.resources}:</p>
+            <div class="flex justify-between md:w-full">
                 <AstroIcon class="size-6 md:size-8 bg-[#101218]/80 rounded py-1"/>
                 <Tailwind class="size-6 md:size-8"/>
                 <ReactIcon class="size-6 md:size-8"/>
                 <Vue class="size-6 md:size-8 text-emerald-500"/>
                 <FirebaseIcon class="size-6 md:size-8" />
+            </divcla>
         </div>
     </div>
 </Section>

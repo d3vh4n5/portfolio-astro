@@ -34,5 +34,9 @@
     "about": "Sobre mí",
     "contact": "Contacto"
   },
-  "copyright": "Desarrollado por Juan Angel Basgall ©️ "
+  "footer":{
+    "copyright": "Desarrollado por Juan Angel Basgall ©️ ",
+    "code": "Código fuente",
+    "resources": "Tecnologías usadas en este proyecto"
+  } 
 }
