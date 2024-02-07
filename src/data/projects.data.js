@@ -36,7 +36,8 @@ export const PROJECTS_ES = [
             "id": "lWdwufSDnWmyHvQo0JS7"
           },
           {
-            "visit_link": "https://github.com/d3vh4n5/CRUDCaCPython",
+            downloadable: true,
+            "download_link": "/files/crud.zip",
             "imageURL": "https://firebasestorage.googleapis.com/v0/b/portfolio-c7261.appspot.com/o/img%2Fecd09df9328bc48d72ae5e5be0ebb7ddee90a8ab466ef92d9e90678061785759?alt=media&token=9e735fec-259b-4e81-b01d-cd1f7ee90eb3",
             "technologies": [
               TAGS.python,
@@ -101,7 +102,8 @@ export const PROJECTS_EN = [
             "id": "lWdwufSDnWmyHvQo0JS7"
           },
           {
-            "visit_link": "https://github.com/d3vh4n5/CRUDCaCPython",
+            downloadable: true,
+            "download_link": "/files/crud.zip",
             "imageURL": "https://firebasestorage.googleapis.com/v0/b/portfolio-c7261.appspot.com/o/img%2Fecd09df9328bc48d72ae5e5be0ebb7ddee90a8ab466ef92d9e90678061785759?alt=media&token=9e735fec-259b-4e81-b01d-cd1f7ee90eb3",
             "technologies": [
               "python",

@@ -1,6 +1,7 @@
 ---
 import Code from "@/components/icons/Code.astro"
 import LinkIcon from "@/components/icons/LinkIcon.astro"
+import DownloadIcon from "@/components/icons/DownloadIcon.astro"
 import { geti18n } from "@/i18n"
 
 
@@ -31,10 +32,17 @@ const i18n = geti18n(currentLocale)
                 <Code class="size-6 me-2"/>
                 { i18n.ui.viewCode }
             </a>
-            <a class="flex w-fit items-center py-1 px-3 rounded font-medium dark:bg-emerald-400 hover:dark:bg-emerald-300 dark:text-black bg-orange-400 hover:bg-orange-300" target="_blank" rel="noreferrer" href={project.visit_link}>
-                <LinkIcon class="size-6 me-2"/>
-                { i18n.ui.visit }
-            </a>
+            {
+                project.downloadable
+                    ?<a class="flex w-fit items-center py-1 px-3 rounded font-medium dark:bg-emerald-400 hover:dark:bg-emerald-300 dark:text-black bg-orange-400 hover:bg-orange-300" href={project.download_link} download>
+                        <DownloadIcon />
+                        { i18n.ui.download }
+                    </a>
+                    :<a class="flex w-fit items-center py-1 px-3 rounded font-medium dark:bg-emerald-400 hover:dark:bg-emerald-300 dark:text-black bg-orange-400 hover:bg-orange-300" target="_blank" rel="noreferrer" href={project.visit_link}>
+                        <LinkIcon class="size-6 me-2"/>
+                        { i18n.ui.visit }
+                    </a>
+            }
         </div>
     </div>
 </div>
