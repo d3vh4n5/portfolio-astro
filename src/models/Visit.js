@@ -1,5 +1,5 @@
 import { db } from '../firebase/InitialConfig'
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, doc, getDoc, updateDoc } from 'firebase/firestore';
 
 const createVisit = async ()=>{
     const visit = {
@@ -13,22 +13,35 @@ const createVisit = async ()=>{
     }
 }
 
+const visitCounterUpdater = async ()  => {
+    const visitCounterRef = doc(db, "counters", "visits");
+    const docSnap = await getDoc(visitCounterRef)
+    const visitCounter = docSnap.data();
+    
+    if (visitCounter !== undefined){
+        visitCounter.totalVisits++
+        await updateDoc(visitCounterRef, visitCounter)
+        return visitCounter.totalVisits
+    }
 
-export const visitHandler = ()=>{
-    fetch('https://api.ipify.org?format=json')
-        .then(response => response.json())
-        .then(data => {
+    return undefined
+}
 
-            if (data.ip == import.meta.env.PUBLIC_AVOID) return console.log('Visit avoided')
-            if (window.location.hostname == 'localhost') return console.log('Visit avoided')
+
+export const visitHandler = async ()=>{
+    try {
+        const response = await fetch('https://api.ipify.org?format=json')
+        const data = await response.json()
+
+        if (data.ip == import.meta.env.PUBLIC_AVOID) return console.log('Visit avoided')
+        if (window.location.hostname == 'localhost') return console.log('Visit avoided')
             
-            try{
-                createVisit()
-            } catch (e) {
-                console.warn('Visit not counted')
-            }
-        })
-        .catch(error => {
+        await createVisit()
+        const totalVisits = await visitCounterUpdater();
+        console.info(`%cYou are visitor number:  ${totalVisits}`, 'background: rgb(7,7,7); color: yellowgreen')
+
+        
+    }catch(error) {
             console.log('Error:', error);
-        });
+    }
 }

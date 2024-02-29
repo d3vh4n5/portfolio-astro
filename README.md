@@ -1,54 +1,46 @@
-# Astro Starter Kit: Basics
+# Portfolio personal con Astro
 
-```sh
-npm create astro@latest -- --template basics
+![Imagen del proyecto](./public/project-img.png)
+
+## Iniciar el proyecto
+
+Primero instalamos las dependencias
+
+```bash
+npm i
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+En el proyecto se usan variables de ambiente, por lo que será necesario crear un archivo .env a nivel raíz del proyecto.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Este archivo debería contener las credenciales de firebase, el cual se usa para guardar los mensajes del formulario de contacto y para contar las visitas a la web.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+También debería contener una variable "PUBLIC_AVOID" que tu ip y otra variable "PUBLIC_IPINFO_API_KEY" con el valor de tu api key en [ipify](https://www.ipify.org/) . Esta información se usa en el proyecto para que se pueda identificar si el autor tiene al mismo ip que el "PUBLIC_AVOID", en ese caso no se registra la visita en Firebase y se evita alterar los contadores con información falsa o irrelevante.
 
-## 🚀 Project Structure
+Con todo esto la estructura del archivo .env debería quedar así:
 
-Inside of your Astro project, you'll see the following folders and files:
+```bash
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+# Firebase
+PUBLIC_API_KEY:
+PUBLIC_AUTH_DOMAIN:
+PUBLIC_PROJECT_ID:
+PUBLIC_STORAGE_BUCKET:
+PUBLIC_MESSAGING_SENDER_ID:
+PUBLIC_APP_ID:
+PUBLIC_MEASSUREMENT_ID:
+
+# Estas 2 pueden no ser necesarias
+PUBLIC_PROFILE_ID:
+PUBLIC_MAIL_API_KEY:
+
+# IP y API KEY
+PUBLIC_AVOID:
+PUBLIC_IPINFO_API_KEY:
+
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Una vez creado esto (o en su defecto comentar los lugares donde utilizan las funciones de los modelos) podemos iniciar el proyecto:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+npm run dev
+```
