@@ -1,5 +1,10 @@
 const CAREER_EN =[
     {
+        title: "Fullstack Node Developer",
+        dates: "02/2024 - Present",
+        description: `Codo a Codo Program`
+    },
+    {
         title: "Higher Technique in Programming",
         dates: "2022 - 2023",
         description: `Graduated as a senior programming technician, having studied the subjects of: Programming logic, Time and work organization, Databases, User experience, Configuration management, Operational management in the cloud, Web programming, People management, Integrations web, Information systems design, Development interface, Efficient decisions and resolutions, Project management, mobile programming.`
@@ -32,6 +37,11 @@ const CAREER_EN =[
 ]
 
 const CAREER_ES =[
+    {
+        title: "Desarrollador Full-Stack Node.js",
+        dates: "02/2024 - Actualidad",
+        description: `Programa Codo a Codo`
+    },
     {
         title: "Tecnicatura Superior en Programación",
         dates: "2022 - 2023",
