@@ -36,7 +36,7 @@ async function handleSubmit(e){
     errorList.value = []
 
     // const captchaCompleted = window.cf && window.cf.recaptcha && window.cf.recaptcha('getResponse');
-    const captchaCompleted = turnstile.getResponse('#captcha-container')
+    const captchaCompleted = turnstile.getResponse('#captcha-container') || false
 
     let name = e.target.name.value;
     let email = e.target.email.value;
