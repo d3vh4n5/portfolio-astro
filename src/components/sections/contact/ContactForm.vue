@@ -22,7 +22,8 @@ onMounted(()=>{
         turnstile.render('#captcha-container', {
             sitekey: import.meta.env.PUBLIC_CF_KEY,
             callback: function(token) {
-                console.log(`Challenge Success ${token}`);
+                // console.log(`Challenge Success ${token}`);
+                console.log('CF successfully loaded')
             },
         });
     };
@@ -36,7 +37,6 @@ async function handleSubmit(e){
 
     // const captchaCompleted = window.cf && window.cf.recaptcha && window.cf.recaptcha('getResponse');
     const captchaCompleted = turnstile.getResponse('#captcha-container')
-    console.log(captchaCompleted)
 
     let name = e.target.name.value;
     let email = e.target.email.value;
@@ -54,6 +54,9 @@ async function handleSubmit(e){
     }
     if (description.trim() === ''){
         errorList.value.push('⚠️ Description field is empty')
+    }
+    if (!captchaCompleted){
+        errorList.value.push('⚠️ Captcha failed')
     }
     
 
@@ -103,7 +106,7 @@ function close(){
 
 </script>
 <template>
-    <section class="contact" id="contact">
+    <section class="contact lg:flex" id="contact">
         <transition>
 
             <Modal
@@ -112,11 +115,22 @@ function close(){
                 :msg="modalMsg"/>
 
         </transition>
+        <div class="flex flex-col items-center justify-center gap-3 
+                    border border-orange-600 dark:border-emerald-500 
+                    rounded-lg p-3 mb-3 lg:mb-0">
+            <p class="text-xl font-medium">¿Te gustó mi trabajo?</p>
+            <p class="text-xl font-medium">¿Tenés alguna duda?</p>
+            <p class="text-xl font-medium">¿Querés contratarme?</p>
+            <p class="text-2xl font-bold text-orange-500 dark:text-emerald-500">
+                ¡No dudes en dejarme un mensaje!
+            </p>
+        </div>
         <form @submit.prevent="handleSubmit" class="flex flex-col lg:w-1/2 mx-auto gap-3">
             <input class="rounded bg-white w-full dark:bg-[#3b3b3b] p-2" name="name" type="text" :placeholder="content.ui.name" required>
             <input class="rounded bg-white w-full dark:bg-[#3b3b3b] p-2" name="email" type="email" :placeholder="content.ui.email" required>
             <input class="rounded bg-white w-full dark:bg-[#3b3b3b] p-2" name="subject" type="text" :placeholder="content.ui.subject" required>
             <textarea class="rounded bg-white w-full dark:bg-[#3b3b3b] p-2 h-40 resize-none" name="description" :placeholder="content.ui.description" required></textarea>
+            <div id="captcha-container"></div>
             <div v-if="errorList.length > 0" class="contact__error-container">
                 <ul class="contact__error-list">
                     <li class="contact__error-item text-red-500 dark:text-orange-600 " v-for="error in errorList">
@@ -124,7 +138,6 @@ function close(){
                     </li>
                 </ul>
             </div>
-            <div id="captcha-container"></div>
             <input 
                 class="w-full bg-orange-500 dark:bg-emerald-500 rounded-lg py-2
                 text-lg font-medium text-white hover:cursor-pointer 
