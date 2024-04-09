@@ -1,12 +1,13 @@
 <script setup>
 import {ref, computed, onMounted} from 'vue'
 import { geti18n } from '../../../i18n/index';
+import { CONTACT } from '@/data/contact.data';
 import { createMessage } from '../../../models/Message';
 import Modal from './Modal.vue';
 
 const currentHref= window.location.pathname
 const currentLocale = currentHref.split('/')[1]
-
+const contactContent = CONTACT[currentLocale || 'es']
 const content = geti18n(currentLocale)
 const errorList = ref([])
 const showModal = ref(false)
@@ -15,6 +16,7 @@ const modalMsg = ref({
     description: 'Test message Test message Test message Test message',
     danger: false
 })
+const msgSent = ref(false)
 
 onMounted(()=>{
     
@@ -86,6 +88,7 @@ async function handleSubmit(e){
             e.target.subject.value = ''
             e.target.description.value = ''
             turnstile.remove('#captcha-container')
+            msgSent.value = true
 
         } catch (e) {
             console.error("Error el crear en Mensaje: ", e)
@@ -118,12 +121,13 @@ function close(){
         </transition>
         <div class="flex flex-col items-center justify-center gap-3 
                     border border-orange-600 dark:border-emerald-500 
-                    rounded-lg p-3 mb-3 lg:mb-0">
-            <p class="text-xl font-medium">¿Te gustó mi trabajo?</p>
-            <p class="text-xl font-medium">¿Tenés alguna duda?</p>
-            <p class="text-xl font-medium">¿Querés contratarme?</p>
-            <p class="text-2xl font-bold text-orange-500 dark:text-emerald-500">
-                ¡No dudes en dejarme un mensaje!
+                    rounded-lg p-3 mb-4 lg:me-4 lg:mb-0 lg:w-1/2">
+            <p class="text-xl font-medium">{{ contactContent.q1 }}</p>
+            <p class="text-xl font-medium">{{ contactContent.q2 }}</p>
+            <p class="text-xl font-medium">{{ contactContent.q3 }}</p>
+            <p class="text-xl font-medium">{{ contactContent.q4 }}</p>
+            <p class="text-2xl font-bold text-orange-500 dark:text-emerald-500 my-3">
+                {{ contactContent.message }}
             </p>
         </div>
         <form @submit.prevent="handleSubmit" class="flex flex-col lg:w-1/2 mx-auto gap-3">
@@ -140,11 +144,18 @@ function close(){
                 </ul>
             </div>
             <input 
+                v-if="!msgSent"
                 class="w-full bg-orange-500 dark:bg-emerald-500 rounded-lg py-2
                 text-lg font-medium text-white hover:cursor-pointer 
                 hover:bg-orange-400 dark:hover:bg-emerald-400" 
                 type="submit" 
                 :value="content.ui.send">
+            <div 
+                class="bg-green-500 dark:bg-green-600 text-white text-center rounded-lg 
+                        font-bold py-3"
+                v-else>
+                <p>{{ contactContent.msgSent }}</p>
+            </div>
         </form>
     </section>
 </template>
