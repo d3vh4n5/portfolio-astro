@@ -1,5 +1,5 @@
 <script setup>
-import {ref, computed} from 'vue'
+import {ref, computed, onMounted} from 'vue'
 import { geti18n } from '../../../i18n/index';
 import { createMessage } from '../../../models/Message';
 import Modal from './Modal.vue';
@@ -16,10 +16,27 @@ const modalMsg = ref({
     danger: false
 })
 
+onMounted(()=>{
+    
+    window.onloadTurnstileCallback = function () {
+        turnstile.render('#captcha-container', {
+            sitekey: import.meta.env.PUBLIC_CF_KEY,
+            callback: function(token) {
+                console.log(`Challenge Success ${token}`);
+            },
+        });
+    };
+
+    // window.cf && window.cf.recaptcha && window.cf.recaptcha('#captcha-container');
+})
 
 async function handleSubmit(e){
     e.preventDefault();
     errorList.value = []
+
+    // const captchaCompleted = window.cf && window.cf.recaptcha && window.cf.recaptcha('getResponse');
+    const captchaCompleted = turnstile.getResponse('#captcha-container')
+    console.log(captchaCompleted)
 
     let name = e.target.name.value;
     let email = e.target.email.value;
@@ -107,6 +124,7 @@ function close(){
                     </li>
                 </ul>
             </div>
+            <div id="captcha-container"></div>
             <input 
                 class="w-full bg-orange-500 dark:bg-emerald-500 rounded-lg py-2
                 text-lg font-medium text-white hover:cursor-pointer 
