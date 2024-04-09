@@ -85,6 +85,7 @@ async function handleSubmit(e){
             e.target.email.value = ''
             e.target.subject.value = ''
             e.target.description.value = ''
+            turnstile.remove('#captcha-container')
 
         } catch (e) {
             console.error("Error el crear en Mensaje: ", e)
