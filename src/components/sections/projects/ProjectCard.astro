@@ -11,7 +11,7 @@ const { currentLocale } = Astro
 const i18n = geti18n(currentLocale)
 
 ---
-<div class="lg:flex project-card bg-white dark:bg-[#101218]/70 my-7 rounded-xl overflow-hidden shadow-md  dark:shadow-lg">
+<div class="project-card lg:flex bg-white dark:bg-[#101218]/70 my-7 rounded-xl overflow-hidden shadow-md  dark:shadow-lg">
     <img src={project.imageURL} alt="Project image" class="lg:w-1/2 aspect-video">
     <div class="p-4 relative project-card__texts">
         <h3 class="text-xl sm:text-3xl font-medium mb-3">{ project && project.title  }</h3>
@@ -50,6 +50,7 @@ const i18n = geti18n(currentLocale)
 <style> 
     .project-card{
 
+
         &:nth-of-type(2n){
             flex-direction: row-reverse;
             
@@ -57,6 +58,34 @@ const i18n = geti18n(currentLocale)
                 left: 16px;
             }
         } 
+    }
+
+    /* For progresive enhancement */
+    @supports (animation-timeline: view()){
+        
+        @media (prefers-reduced-motion: no-preference) {
+    
+            .project-card {
+                scale: .8;
+                opacity: 0;
+    
+                animation: fade-in ease-in-out forwards;
+                animation-timeline: view();
+                /* animation-range: 50px 300px; */
+                /* animation-range: view(); */
+                /* animation-range: entry; */
+                animation-range: entry 50px;
+                /* animation-range: entry 50px cover 150px; */
+                animation-range: entry 5% cover 25%;
+            }
+            
+            @keyframes fade-in {
+                80%, 100% {
+                    scale: 1;
+                    opacity: 1;
+                }
+            }
+        }
     }
     
     

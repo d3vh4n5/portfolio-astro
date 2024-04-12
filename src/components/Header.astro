@@ -11,6 +11,7 @@ const menuKeys = Object.keys(i18n.menu)
 ---
 
 <header class="fixed z-50 w-full lg:w-[1000px] left-1/2 translate-x-[-50%] rounded-b-xl  backdrop-blur-sm shadow pt-2">
+    <div class="scroll-progress bg-orange-500 dark:bg-emerald-500 h-1 fixed top-0 left-0"></div>
     <div class="absolute sm:static hidden sm:flex justify-center gap-5">
         <ThemeSelector client:only="preact" />
         <LanguageSelector />
@@ -69,26 +70,47 @@ const menuKeys = Object.keys(i18n.menu)
     </nav>
 </header>
 
+<style>
+  .scroll-progress{
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 10px;
+    background-color: red; */
+
+    animation: watcher auto linear;
+    animation-timeline: scroll(root block);
+  }
+
+  @keyframes watcher {
+    from { width: 0% }
+    to {
+      width: 100%;
+    }
+  }
+</style>
+
 <script>
     document.addEventListener("astro:page-load", () => {
-      const menuToggle = document.getElementById("menu-toggle") as HTMLElement;
+      const $menuToggle = document.getElementById("menu-toggle") as HTMLElement;
   
-      const mobileMenu = document.getElementById("mobile-menu") as HTMLElement;
-      const menuItems = document.querySelectorAll(".menu-item");
+      const $mobileMenu = document.getElementById("mobile-menu") as HTMLElement;
+      const $menuItems = document.querySelectorAll(".menu-item");
   
-      if (!menuToggle || !mobileMenu || !menuItems) {
+      if (!$menuToggle || !$mobileMenu || !$menuItems) {
         return;
       }
   
-      menuToggle.addEventListener("click", () => {
+      $menuToggle.addEventListener("click", () => {
         document.body.classList.toggle("overflow-hidden");
-        mobileMenu.classList.toggle("translate-y-0");
+        $mobileMenu.classList.toggle("translate-y-0");
       });
   
-      menuItems.forEach((elem) => {
+      $menuItems.forEach((elem) => {
         elem.addEventListener("click", function () {
           document.body.classList.toggle("overflow-hidden");
-          mobileMenu.classList.toggle("translate-y-0");
+          $mobileMenu.classList.toggle("translate-y-0");
         });
       });
     });
