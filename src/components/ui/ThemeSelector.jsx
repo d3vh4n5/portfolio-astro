@@ -5,6 +5,9 @@ import SunIcon from "../icons/SunIcon.astro?raw";
 export default function ThemeSelector(){
 
     const [theme, setTheme] = useState(()=>{
+        const localTheme = localStorage.getItem('theme')
+        if (localTheme !== undefined) return localTheme
+
         if(window.matchMedia("(prefers-color-scheme: dark)").matches){
             return "dark"
         }
@@ -12,7 +15,7 @@ export default function ThemeSelector(){
     })
 
     useEffect(()=>{
-        if(theme =="dark"){
+        if(theme ==  "dark"){
             document.querySelector('html').classList.add('dark')
         }else {
             document.querySelector('html').classList.remove('dark')
@@ -22,6 +25,7 @@ export default function ThemeSelector(){
 
     function handleThemeChange(){
         setTheme(prevTheme => prevTheme === "light" ? "dark" : "light")
+        localStorage.setItem('theme', theme === "light" ? "dark" : "light")
     }
 
 
