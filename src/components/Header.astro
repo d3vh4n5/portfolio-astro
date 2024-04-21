@@ -10,7 +10,7 @@ const i18n = geti18n(currentLocale)
 const menuKeys = Object.keys(i18n.menu)
 ---
 
-<header class="fixed z-50 w-full lg:w-[1000px] left-1/2 translate-x-[-50%] rounded-b-xl  backdrop-blur-sm shadow pt-2">
+<header class="sticky top-0 z-50 w-full lg:w-[1000px] rounded-b-xl  backdrop-blur-sm shadow mx-auto pt-2">
     <div class="scroll-progress bg-orange-500 dark:bg-emerald-500 h-1 fixed top-0 left-0"></div>
     <div class="absolute sm:static hidden sm:flex justify-center gap-5">
         <ThemeSelector client:only="preact" />
@@ -45,7 +45,7 @@ const menuKeys = Object.keys(i18n.menu)
                 <li>
                     <a 
                         class="menu-item my-2 py-2 px-4 uppercase block rounded text-xl"
-                        href={'#'+key}
+                        href={'/#'+key}
                     >{i18n.menu[key]}</a>
                 </li>
             ))
@@ -61,7 +61,7 @@ const menuKeys = Object.keys(i18n.menu)
                     <li>
                         <a 
                             class="my-2 py-2 px-4 uppercase block rounded hover:bg-slate-300/50 dark:hover:bg-slate-700/50"
-                            href={'#'+key}
+                            href={'/#'+key}
                         >{i18n.menu[key]}</a>
                     </li>
                 ))

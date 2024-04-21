@@ -1,0 +1,14 @@
+---
+import ChannelCard from "./ChannelCard.astro";
+import Section from "@/components/Section.astro";
+
+import { RESOURCES } from "@/data/resources.data";
+---
+
+<Section id="channels" class="grid grid-cols-3 gap-2">
+    {
+        RESOURCES.es.page.ytChannels.map( channel => (
+            <ChannelCard channel={channel} />
+        ))
+    }
+</Section>
