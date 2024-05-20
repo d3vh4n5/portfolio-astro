@@ -370,6 +370,18 @@ const RESOURCES_ES = {
                 description: 'Makigas explica muy bien, y suele tener info clave y no tan común en lo que es JavaScript',
                 difficulty: 'mid'
             },
+            {
+                name: 'codigofacilito',
+                channel: '@codigofacilito',
+                page: 'https://codigofacilito.com/',
+                language: 'Español',
+                content: [''],
+                mainContent: '',
+                logo: 'https://yt3.googleusercontent.com/ytc/AIdro_kt9RHOt4zZmKV8wIWZaIdyumK9yS1VXfvh_iDJozt7i4w=s160-c-k-c0x00ffffff-no-rj',
+                url: 'https://www.youtube.com/@codigofacilito',
+                description: '',
+                difficulty: 'mid'
+            },
             // {
             //     name: '',
             //     channel: '',
