@@ -78,12 +78,12 @@ export const PROJECTS_EN = [
             "title": "Mercado Lan",
             // "visit_link": "https://mercadolan.000webhostapp.com/",
             "visit_link": "http://testapps.infinityfreeapp.com/",
-            "technologies": [
-              "php",
-              "js",
-              "html5",
-              "css3-alt",
-              "database"
+            technologies: [
+              TAGS.php,
+              TAGS.js,
+              TAGS.html,
+              TAGS.css,
+              TAGS.database
             ],
             "id": "LyGKL96mpYh2gulQcxtt"
           },
@@ -96,10 +96,10 @@ export const PROJECTS_EN = [
             "imageURL": "https://firebasestorage.googleapis.com/v0/b/portfolio-c7261.appspot.com/o/img%2F8ed5e9c20453fde4716c5fa4311077a948e2471eb86f6177fc2bd20c7bddef55?alt=media&token=44581f06-8d3a-480b-b851-d3b6171358b8",
             "description": "Front-end made in React during the \"Development Interface\" subject at Teclab.",
             "technologies": [
-              "js",
-              "react",
-              "html5",
-              "css3-alt"
+              TAGS.react,
+              TAGS.html,
+              TAGS.js,
+              TAGS.css
             ],
             "id": "lWdwufSDnWmyHvQo0JS7"
           },
@@ -108,8 +108,8 @@ export const PROJECTS_EN = [
             "download_link": "/files/crud.zip",
             "imageURL": "https://firebasestorage.googleapis.com/v0/b/portfolio-c7261.appspot.com/o/img%2Fecd09df9328bc48d72ae5e5be0ebb7ddee90a8ab466ef92d9e90678061785759?alt=media&token=9e735fec-259b-4e81-b01d-cd1f7ee90eb3",
             "technologies": [
-              "python",
-              "database"
+              TAGS.python,
+              TAGS.database
             ],
             "code_link": "https://github.com/d3vh4n5/CRUDCaCPython",
             "title": "Tkinter CRUD",
@@ -125,9 +125,9 @@ export const PROJECTS_EN = [
             "description": "Back-end project that we carried out as a group for the subject \"Web Integrations\" of Teclab. For the this we use Node.js and Express.js.",
             "visible": true,
             "technologies": [
-              "node",
-              "github",
-              "database"
+              TAGS.node,
+              TAGS.js,
+              TAGS.database,
             ],
             "title": "API REST",
             "code_link": "https://github.com/d3vh4n5/APIGrupalTeclab",

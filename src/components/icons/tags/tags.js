@@ -15,6 +15,8 @@ import Node from "./Node.astro";
 import Vue from "./Vue.astro";
 import Python from "./Python.astro";
 import Java from "./Java.astro";
+import Wordpress from './Wordpress.astro'
+import FirebaseIcon from "@/components/icons/FirebaseIcon.astro";
 
 export const TAGS = {
     php: PHP,
@@ -23,7 +25,7 @@ export const TAGS = {
     sass: Sass,
     astro: AstroIcon,
     codeigniter: Fire,
-    firebase: Fire,
+    firebase: FirebaseIcon,
     tailwind: Tailwind,
     ts: TypeScriptIcon,
     next: NextJSIcon,
@@ -35,4 +37,5 @@ export const TAGS = {
     vue: Vue,
     python: Python,
     java: Java,
+    wordpress: Wordpress,
 }
