@@ -66,6 +66,24 @@ export const PROJECTS_ES = [
             "code_link": "https://github.com/d3vh4n5/APIGrupalTeclab",
             "id": "wJ9PWxnZzdV6T0WQmhgs"
           },
+          {
+            "imageURL": "https://healthup.alwaysdata.net/img/fss.png",
+            "visit_link": "https://healthupcac.netlify.app/",
+            "imageName": "HealthUp screen Shot",
+            "description": "Este fue un hermoso proyecto que me tocó liderar durante el curso de FullStack Node en Codo a Codo.",
+            "visible": true,
+            "technologies": [
+              TAGS.node,
+              TAGS.database,
+              TAGS.vue,
+              TAGS.html,
+              TAGS.css,
+              TAGS.js,
+            ],
+            "title": "Vue & Node API REST",
+            "code_link": "https://github.com/d3vh4n5/CaC-Fullstack-Node-Grupo10",
+            
+          },
 ]
 
 export const PROJECTS_EN = [
@@ -132,6 +150,24 @@ export const PROJECTS_EN = [
             "title": "API REST",
             "code_link": "https://github.com/d3vh4n5/APIGrupalTeclab",
             "id": "wJ9PWxnZzdV6T0WQmhgs"
+          },
+          {
+            "imageURL": "https://healthup.alwaysdata.net/img/fss.png",
+            "visit_link": "https://healthupcac.netlify.app/",
+            "imageName": "HealthUp screen Shot",
+            "description": "This was a beautiful project that I had to lead during the FullStack Node course at Codo a Codo.",
+            "visible": true,
+            "technologies": [
+              TAGS.node,
+              TAGS.database,
+              TAGS.vue,
+              TAGS.html,
+              TAGS.css,
+              TAGS.js,
+            ],
+            "title": "Vue & Node API REST",
+            "code_link": "https://github.com/d3vh4n5/CaC-Fullstack-Node-Grupo10",
+            
           },
 ]
 
