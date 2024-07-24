@@ -10,7 +10,8 @@ export const PROJECTS_ES = [
             "imageURL": "https://firebasestorage.googleapis.com/v0/b/portfolio-c7261.appspot.com/o/img%2Fd45960c2f4755c474abe06e0c731ba641ff72940266a4148f71f86b38692d9b7?alt=media&token=f66474af-9e04-49d8-a518-e74df997592e",
             "title": "Mercado Lan",
             // "visit_link": "https://mercadolan.000webhostapp.com/",
-            "visit_link": "http://testapps.infinityfreeapp.com/",
+            // "visit_link": "http://testapps.infinityfreeapp.com/",
+            "visit_link": "https://mercadolan2-3csh8btj.b4a.run/",
             technologies: [
               TAGS.php,
               TAGS.js,
@@ -95,7 +96,8 @@ export const PROJECTS_EN = [
             "imageURL": "https://firebasestorage.googleapis.com/v0/b/portfolio-c7261.appspot.com/o/img%2Fd45960c2f4755c474abe06e0c731ba641ff72940266a4148f71f86b38692d9b7?alt=media&token=f66474af-9e04-49d8-a518-e74df997592e",
             "title": "Mercado Lan",
             // "visit_link": "https://mercadolan.000webhostapp.com/",
-            "visit_link": "http://testapps.infinityfreeapp.com/",
+            // "visit_link": "http://testapps.infinityfreeapp.com/",
+            "visit_link": "https://mercadolan2-3csh8btj.b4a.run/",
             technologies: [
               TAGS.php,
               TAGS.js,
