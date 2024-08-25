@@ -382,6 +382,30 @@ const RESOURCES_ES = {
                 description: '',
                 difficulty: 'mid'
             },
+            {
+                name: 'Antonio Sarosi',
+                channel: '',
+                page: '',
+                language: '',
+                content: [''],
+                mainContent: '',
+                logo: 'https://yt3.ggpht.com/ucoGVKrE8yOhOleGaT0zc_-sAbZ5axAN7n_euzL9gsvKgzAXY0E95smUJS3c47vRGTSVyOeI=s48-c-k-c0x00ffffff-no-rj',
+                url: '',
+                description: '',
+                difficulty: ''
+            },
+            {
+                name: 'laracast',
+                channel: 'laracast',
+                page: '',
+                language: 'PHP',
+                content: [''],
+                mainContent: '',
+                logo: '',
+                url: '',
+                description: '',
+                difficulty: ''
+            },
             // {
             //     name: '',
             //     channel: '',

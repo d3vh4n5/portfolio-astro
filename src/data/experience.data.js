@@ -2,10 +2,24 @@ import { TAGS } from "@/components/icons/tags/tags"
 
 const EXPERIENCES_EN = [
         {
+          logo: "/img/globalcommerce.png",
+          alt: "Global Commerce logo",
+          "title": "Global Commerce",
+          "date" : "Sep 2024 - Present",
+          "description": "In this company I play the role of Full-Stack Developer, among the main tasks are the development of Chat Bots and APIs with Node.js and Java",
+          "invitation": "",
+          "visitURL" : "",
+          technologies: [
+            TAGS.js,
+            TAGS.java,
+            TAGS.node
+          ]
+        },
+        {
           "logo": "/img/easylifemarketing.png",
           "alt": "Easy Life Marketing logo",
           "title": "Easy Life Marketing",
-          "date": "May 2024 - Present",
+          "date": "May 2024 - Sep 2024",
           "description": "I handled the justification and migration of multiple websites for the Spanish company 'EasyLife Marketing', using tools like WordPress and Elementor to optimize site performance and usability.",
           "invitation": "",
           "visitURL": "",
@@ -55,10 +69,24 @@ const EXPERIENCES_EN = [
 
 const EXPERIENCES_ES = [
         {
+          logo: "/img/globalcommerce.png",
+          alt: "Global Commerce logo",
+          "title": "Global Commerce",
+          "date" : "Sep 2024 - Actualidad",
+          "description": "En esta empresa desempeño el paapel de Full-Stack Developer, dentro de las tareas principales se encuentran el desarrollos de Chat Bots y APIs con Node.js y Java",
+          "invitation": "",
+          "visitURL" : "",
+          technologies: [
+            TAGS.js,
+            TAGS.java,
+            TAGS.node
+          ]
+        },
+        {
           logo: "/img/easylifemarketing.png",
           alt: "Easy life marketing logo",
           "title": "Easy Life Marketing",
-          "date" : "Mayo 2024 - Actualidad",
+          "date" : "Mayo 2024 - Sep 2024",
           "description": "Realización de justificaciónes y migraciones de múltiples sitios webs para la empresa española 'EasyLife Marketing', usando herramientas como Wordpress y Elementor.",
           "invitation": "",
           "visitURL" : "",

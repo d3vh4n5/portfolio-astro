@@ -11,7 +11,7 @@ export const PROJECTS_ES = [
             "title": "Mercado Lan",
             // "visit_link": "https://mercadolan.000webhostapp.com/",
             // "visit_link": "http://testapps.infinityfreeapp.com/",
-            "visit_link": "https://mercadolan2-3csh8btj.b4a.run/",
+            "visit_link": "https://testapps.infinityfreeapp.com",
             technologies: [
               TAGS.php,
               TAGS.js,
@@ -97,7 +97,7 @@ export const PROJECTS_EN = [
             "title": "Mercado Lan",
             // "visit_link": "https://mercadolan.000webhostapp.com/",
             // "visit_link": "http://testapps.infinityfreeapp.com/",
-            "visit_link": "https://mercadolan2-3csh8btj.b4a.run/",
+            "visit_link": "https://testapps.infinityfreeapp.com",
             technologies: [
               TAGS.php,
               TAGS.js,

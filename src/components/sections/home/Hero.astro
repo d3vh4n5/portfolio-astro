@@ -6,7 +6,7 @@ import LinkedIn from '@/components/icons/LinkedIn.astro'
 import PDFIcon from '@/components/icons/PDF.astro'
 import MapLocationDot from '@/components/icons/MapLocationDot.astro'
 import { geti18n } from '@/i18n/'
-import { HERO } from '@/data/hero.data'
+import { HERO, available } from '@/data/hero.data'
 import { userLinks } from '@/constants/userLinks.constants'
 
 
@@ -29,9 +29,16 @@ const HERO_CONTENT = HERO[currentLocale]
                 <MapLocationDot class="size-6"/>
                 {HERO_CONTENT.from.city} - {HERO_CONTENT.from.province} - {HERO_CONTENT.from.country}
             </div>
-            <span class="border border-current rounded w-fit px-5 my-4 text-green-700 dark:text-green-500 bg-green-400/20">
-                { HERO_CONTENT.status }
-            </span>
+            {
+                available 
+                    ?   <span class="border border-current rounded w-fit px-5 my-4 text-green-700 dark:text-green-500 bg-green-400/20">
+                            { HERO_CONTENT.status }
+                        </span>
+                    :   <span class="border border-current rounded w-fit px-5 my-4 text-red-700 dark:text-red-500 bg-red-400/20">
+                            { 'No ' + HERO_CONTENT.status }
+                        </span>
+            }
+            
             <div class="flex gap-2">
                 <SocialPill href={userLinks.linkedin}>
                     <LinkedIn class="size-4 md:size-5" />

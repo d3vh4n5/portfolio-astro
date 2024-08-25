@@ -1,0 +1,170 @@
+---
+
+const { item } = Astro.props;
+---
+<div class="card">
+    <header class="card-header">
+        <aside class="stats">
+            {
+                item.stats.map( stat => (
+                <div class="stats-item">
+                    <p class="stats-number">{ stat.number }</p>
+                    <p class="stats-description">{ stat.description }</p>
+                </div>
+                ) )
+            }
+        </aside>
+        <div class="img-container">
+            <img src={ item.img } alt="Logo">
+        </div>
+    </header>
+    <main class="card-body">
+        <h3 class="card-title">{ item.title }</h3>
+        <hr>
+        <p class="card-text">{ item.subtle1 }</p>
+        <p class="card-text">{ item.subtle2 }</p>
+    </main>
+</div>
+
+<style>
+    :root{
+    --ct-blue: rgb(25, 118, 194);
+    --ct-blue-bg: rgb(18, 79, 129);
+}
+
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: radial-gradient(gray, black);
+    color: white;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.card{
+    --_size: 260px;
+
+    padding: 10px;
+    width: var(--_size);
+    height: calc(var(--_size) * 1.5);
+    border: 2px solid var(--ct-blue);
+    border-radius: 15px;
+    background-color: rgba(20, 20, 20, 0.7);
+    transition: all .3s;
+    
+
+    &:hover{
+        cursor: pointer;
+        box-shadow: 0px 0px 5px 5px rgba(0, 162, 255, 0.349);
+
+        & > .card-header > .stats{
+            top: -40px;
+            opacity: 1;
+        }
+
+        & > .card-header > .img-container img{
+            --_size: 150px;
+            
+            position: relative;
+            top: 10px;
+            right: 10px;
+            border-radius: 100%;
+            width: var(--_size);
+            height: var(--_size);
+        }
+    }
+
+}
+
+.card-header {
+    position: relative;
+    height: 70%;
+}
+
+.stats{
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+    padding: 5px;
+    width: 30%;
+    border-left: 1px solid var(--ct-blue);
+    border-right: 1px solid var(--ct-blue);
+    background: linear-gradient(to bottom, var(--ct-blue-bg) 60%, transparent);
+    transition: all .3s;
+    z-index: 2;
+
+    &::before{
+        position: absolute;
+        top: -30px;
+        left: -1px;
+        content: '';
+        width: 100%;
+        height: 50px;
+        border-top: 1px solid var(--ct-blue);
+        border-left: 1px solid var(--ct-blue);
+        border-right: 1px solid var(--ct-blue);
+        background-color: var(--ct-blue-bg);
+        transform: skewY(-20deg);
+        z-index: -1;
+        box-sizing: content-box;
+    }
+    
+}
+
+.stats-item{
+    margin-bottom: 20px;
+}
+
+.stats-number{
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.stats-description{
+    color: var(--ct-blue);
+    font-weight: 600;
+    font-size: 12px;
+    text-align: center;
+}
+
+.img-container{
+    display: flex;
+    justify-content: end;
+}
+
+.img-container img{
+    --_size: 200px;
+    
+    position: relative;
+    top: 10px;
+    right: 20px;
+    border-radius: 100%;
+    width: var(--_size);
+    height: var(--_size);
+    transition: all .3s;
+}
+
+.card-title{
+    font-size: 28px;
+    text-align: center;
+}
+
+.card-text{
+    text-align: center;
+    font-weight: 500;
+
+    &:first-of-type{
+        margin-block: 5px;
+        font-style: italic;
+    }
+}
+</style>

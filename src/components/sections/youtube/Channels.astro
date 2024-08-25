@@ -1,14 +1,43 @@
 ---
 import ChannelCard from "./ChannelCard.astro";
 import Section from "@/components/Section.astro";
+import CSCard from "@/components/ui/CSCard.astro";
 
 import { RESOURCES } from "@/data/resources.data";
+
+const toCardData = RESOURCES.es.page.ytChannels.map( item => ({
+    title: item.name,
+    subtle1: item.channel,
+    subtle2: "Titulo 2",
+    img: item.logo,
+    stats: [
+        {
+            number: 99,
+            description: "Descripcion"
+        },
+        {
+            number: 99,
+            description: "Descripcion"
+        },
+        {
+            number: 99,
+            description: "Descripcion"
+        },
+    ]
+}) )
+
+console.log(toCardData)
 ---
 
 <Section id="channels" class="grid grid-cols-3 gap-2">
     {
         RESOURCES.es.page.ytChannels.map( channel => (
             <ChannelCard channel={channel} />
+        ))
+    }
+    {
+        toCardData.map(item => (
+            <CSCard item={item} />
         ))
     }
 </Section>
