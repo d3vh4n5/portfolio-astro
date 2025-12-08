@@ -6,12 +6,11 @@ const EXPERIENCES_EN = [
           alt: "Global Commerce logo",
           "title": "Global Commerce",
           "date" : "Sep 2024 - Present",
-          "description": "In this company I play the role of Full-Stack Developer, among the main tasks are the development of Chat Bots and APIs with Node.js and Java",
+          "description": "In this company I play the role of Full-Stack Developer, among the main tasks are the development of Chat Bots using the Blip platform and APIs using Nest with Typescript.",
           "invitation": "",
           "visitURL" : "",
           technologies: [
             TAGS.js,
-            TAGS.java,
             TAGS.node
           ]
         },
@@ -73,12 +72,11 @@ const EXPERIENCES_ES = [
           alt: "Global Commerce logo",
           "title": "Global Commerce",
           "date" : "Sep 2024 - Actualidad",
-          "description": "En esta empresa desempeño el paapel de Full-Stack Developer, dentro de las tareas principales se encuentran el desarrollos de Chat Bots y APIs con Node.js y Java",
+          "description": "En esta empresa desempeño el papel de Full-Stack Developer, dentro de las tareas principales se encuentran el desarrollo de Chat Bots usando la plataforma 'Blip' y para el backend usamos Nest con Typescript.",
           "invitation": "",
           "visitURL" : "",
           technologies: [
             TAGS.js,
-            TAGS.java,
             TAGS.node
           ]
         },
